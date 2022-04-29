@@ -23,7 +23,7 @@ def handProcess(VideoFrame):
      processed_result = hand.process(framergb)
      return processed_result
 
-def GesturePredict(videoframe, x):
+def GesturePredict(videoframe, x, positions):
     mediaPipeDraw.draw_landmarks(videoframe, x, mediapipeHand.HAND_CONNECTIONS)
     # Predict gesture
     prediction = model.predict([positions])

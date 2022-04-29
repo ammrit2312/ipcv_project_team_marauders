@@ -71,6 +71,7 @@ if __name__ == "__main__":
         frame = imutils.resize(frame, width=700)
 
         frame = cv2.flip(frame, 1)
+        x, y, c = frame.shape
 
         clone = frame.copy()
 
@@ -110,7 +111,7 @@ if __name__ == "__main__":
                     posX = int(mark.x * x)
                     posY = int(mark.y * y)
                     positions.append([posX, posY])
-                gesture = GesturePredict(frame, handslms)
+                gesture = GesturePredict(frame, handslms, positions)
         cv2.putText(clone, gesture, (10, 50), cv2.FONT_HERSHEY_TRIPLEX,
                    1, (50, 52, 168), 2, cv2.LINE_AA)
         cv2.rectangle(clone, (left, top), (right, bottom), (0, 255, 0), 2)
