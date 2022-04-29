@@ -1,4 +1,3 @@
-# https://gogul.dev/software/hand-gesture-recognition-p1
 import cv2
 import mediapipe as mediapipe
 import imutils
